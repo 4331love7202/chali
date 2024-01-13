@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- saved from url=(0133)file:///C:/Users/HP/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/index%20%EA%B1%B0%EB%B6%81%EC%9D%B4%EA%B2%8C%EC%9E%84%20(1).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바다 거북이 게임</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #87CEEB;
+        }
+
+        #game-container {
+            background-color: #F0FFFF;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #006400;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #4682B4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input {
+            font-size: 16px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        #status {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #008080;
+        }
+    </style>
+</head>
+<body>
+
+<div id="game-container">
+    <h1>바다 거북이 게임</h1>
+    <label for="username">당신의 거북이의 이름을 입력하세요:</label>
+    <input type="text" id="username" placeholder="거북이 이름">
+    <br>
+    <button onclick="startGame()">게임 시작</button>
+    <button onclick="eatFish()" disabled="">물고기 잡아먹기</button>
+    <button onclick="mate()" disabled="">교배하기</button>
+    <p id="status">게임을 시작하세요!</p>
+</div>
+
+<script>
+    let username = "";
+    let size = 1; // 초기 크기
+    let isPregnant = false; // 알을 낳을 준비 여부
+
+    function startGame() {
+        username = document.getElementById('username').value || "거북이";
+        size = 1;
+        isPregnant = false;
+
+        document.getElementById('status').innerText = `${username}의 현재 크기: ${size.toFixed(2)}`;
+        document.getElementById('status').innerText += "\n게임이 시작되었습니다!";
+        document.getElementById('status').style.color = "#008080";
+
+        // 버튼 활성화
+        document.querySelector('button:nth-child(2)').disabled = false;
+        document.querySelector('button:nth-child(3)').disabled = false;
+    }
+
+    function eatFish() {
+        size += 0.2; // 물고기를 먹으면 몸집이 커짐
+        checkSize();
+    }
+
+    function mate() {
+        if (size >= 2 && !isPregnant) {
+            isPregnant = true;
+            setTimeout(() => {
+                size += 1; // 교배 후 알이 자라서 거북이가 됨
+                is
+
+
+</script></body></html>
